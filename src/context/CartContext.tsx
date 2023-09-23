@@ -14,6 +14,8 @@ type CartContext = {
   addItem: (id: number) => void;
   decreaseItem: (id: number) => void;
   removeItem: (id: number) => void;
+  cartQty: number;
+  cartItems: CartItem[];
 };
 
 const CartContext = createContext({} as CartContext);

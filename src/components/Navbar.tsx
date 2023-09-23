@@ -26,6 +26,21 @@ function Navbar() {
           }}
         >
           <i className="bi bi-cart"></i>
+          <div
+            className="rounded-circle bg-secondary d-flex justify-content-center align-items-center"
+            style={{
+              color: "white",
+              width: "1.2rem",
+              height: "1.2rem",
+              position: "absolute",
+              fontSize: "1.2rem",
+              top: 0,
+              right: 0,
+              transform: "translate(25%,-25%)",
+            }}
+          >
+            2
+          </div>
         </Button>
       </Container>
     </NavbarBs>

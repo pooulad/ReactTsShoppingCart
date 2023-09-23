@@ -16,6 +16,7 @@ type CartContext = {
   removeItem: (id: number) => void;
 };
 
+const CartContext = createContext({} as CartContext);
 
 export function useCartContext() {
   return useContext(CartContext);

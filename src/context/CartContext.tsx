@@ -27,6 +27,7 @@ export function useCartContext() {
 }
 
 export function CartProvider({ children }: CartProviderProps) {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   const cartQty = cartItems.reduce((qty, item) => item.qty + qty, 0);

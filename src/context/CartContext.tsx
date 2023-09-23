@@ -9,6 +9,13 @@ type CartItem = {
   qty: number;
 };
 
+type CartContext = {
+  getItemQty: (id: number) => number;
+  addItem: (id: number) => void;
+  decreaseItem: (id: number) => void;
+  removeItem: (id: number) => void;
+};
+
 
 export function useCartContext() {
   return useContext(CartContext);

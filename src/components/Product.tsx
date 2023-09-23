@@ -1,4 +1,5 @@
 import { Card, Button } from "react-bootstrap";
+import { useCartContext } from "../context/CartContext";
 
 type ProductProps = {
   id: number;
@@ -9,6 +10,7 @@ type ProductProps = {
 
 function Product({ id, title, price, imageUrl }: ProductProps) {
   const qty = 0;
+  const { getItemQty, addItem, decreaseItem, removeItem } = useCartContext();
   return (
     <Card className="h-100">
       <Card.Img
@@ -35,7 +37,7 @@ function Product({ id, title, price, imageUrl }: ProductProps) {
                 <span>{qty}</span>
                 <Button className="btn-secondary">-</Button>
               </div>
-              <Button className="btn-light" size="sm">
+              <Button className="btn-dark" size="sm">
                 Remove
               </Button>
             </div>

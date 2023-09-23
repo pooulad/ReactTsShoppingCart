@@ -30,7 +30,7 @@ export function CartProvider({ children }: CartProviderProps) {
   const cartQty = cartItems.reduce((qty, item) => item.qty + qty, 0);
 
   function getItemQty(id: number) {
-    return cartItems.find((item) => item.id === id)?.qty || 0
+    return cartItems.find((item) => item.id === id)?.qty || 0;
   }
 
   function addItem(id: number) {

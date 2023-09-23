@@ -40,40 +40,40 @@ export function CartProvider({ children }: CartProviderProps) {
       } else {
         return currentItems.map((item) => {
           if (item.id === id) {
-            return { ...item, qty: item.qty + 1 }
+            return { ...item, qty: item.qty + 1 };
           } else {
-            return item
+            return item;
           }
-        })
+        });
       }
-    })
+    });
   }
 
   function decreaseItem(id: number) {
     setCartItems((currentItems) => {
       if (currentItems.find((item) => item.id === id)?.qty == 1) {
-        return currentItems.filter((item) => item.id !== id)
+        return currentItems.filter((item) => item.id !== id);
       } else {
         return currentItems.map((item) => {
           if (item.id === id) {
-            return { ...item, qty: item.qty - 1 }
+            return { ...item, qty: item.qty - 1 };
           } else {
-            return item
+            return item;
           }
-        })
+        });
       }
-    })
+    });
   }
 
   function removeItem(id: number) {
     setCartItems((currentItems) => {
-      return currentItems.filter((item) => item.id !== id)
-    })
+      return currentItems.filter((item) => item.id !== id);
+    });
   }
 
   return (
     <CartContext.Provider
-      value={{ getItemQty, addItem, removeItem, decreaseItem }}
+      value={{ getItemQty, addItem, removeItem, decreaseItem,cartItems,cartQty }}
     >
       {children}
     </CartContext.Provider>

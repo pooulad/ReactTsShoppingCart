@@ -25,7 +25,20 @@ function Product({ id, title, price, imageUrl }: ProductProps) {
         <div className="mt-auto">
           {qty === 0 ? (
             <Button className="w-100 btn-secondary">Add to cart</Button>
-          ) : null}
+          ) : (
+            <div
+              className="d-flex align-items-center flex-column"
+              style={{ gap: "0.5rem" }}
+            >
+              <div className="d-flex align-items-center justify-content-center">
+                <Button className="btn-secondary">+</Button>
+                <span>{qty}</span>
+                <Button className="btn-secondary">-</Button>
+              <Button className="btn-light" size="sm">
+                Remove
+              </Button>
+            </div>
+          )}
         </div>
       </Card.Body>
     </Card>

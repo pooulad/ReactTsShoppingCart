@@ -20,6 +20,17 @@ function CartItem({ id, qty }: CartItemProps) {
         src={product.imageUrl}
         alt={product.imageUrl}
       />
+      <div className="me-auto text-dark">
+        <div>
+          {product.title}{" "}
+          {qty > 1 && (
+            <span className="text-muted" style={{ fontSize: "0.65rem" }}>
+              {qty}
+            </span>
+          )}
+        </div>
+        <div>{product.price * qty}</div>
+      </div>
     </Stack>
   );
 }

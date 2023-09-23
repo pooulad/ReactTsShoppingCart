@@ -45,6 +45,21 @@ export function CartProvider({ children }: CartProviderProps) {
     });
   }
 
+  function decreaseItem(id: number) {
+    setCartItems((currentItems) => {
+      if (currentItems.find((item) => item.id === id)?.qty == 1) {
+        return currentItems.filter((item) => item.id !== id);
+      } else {
+        return currentItems.map((item) => {
+          if (item.id === id) {
+            return { ...item, qty: item.qty - 1 };
+          } else {
+            return item;
+          }
+        });
+      }
+    });
+  }
   return (
     <CartContext.Provider value={CartContext}>{children}</CartContext.Provider>
   );

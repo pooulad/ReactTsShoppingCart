@@ -36,7 +36,7 @@ export function CartProvider({ children }: CartProviderProps) {
   function addItem(id: number) {
     setCartItems((currentItems) => {
       if (currentItems.find((item) => item.id === id) == null) {
-        return [...currentItems, { id, qty: 1 }]
+        return [...currentItems, { id, qty: 1 }];
       } else {
         return currentItems.map((item) => {
           if (item.id === id) {

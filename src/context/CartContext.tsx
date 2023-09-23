@@ -33,6 +33,7 @@ export function CartProvider({ children }: CartProviderProps) {
   const cartQty = cartItems.reduce((qty, item) => item.qty + qty, 0);
 
   const openCart = () => setIsOpen(true);
+  const closeCart = () => setIsOpen(false);
   function getItemQty(id: number) {
     return cartItems.find((item) => item.id === id)?.qty || 0;
   }

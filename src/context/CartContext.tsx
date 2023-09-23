@@ -10,3 +10,8 @@ export function useCartContext() {
   return useContext(CartContext);
 }
 
+export function CartProvider({ children }: CartProviderProps) {
+  return (
+    <CartContext.Provider value={CartContext}>{children}</CartContext.Provider>
+  );
+}

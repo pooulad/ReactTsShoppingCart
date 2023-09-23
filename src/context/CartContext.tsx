@@ -78,7 +78,16 @@ export function CartProvider({ children }: CartProviderProps) {
 
   return (
     <CartContext.Provider
-      value={{ getItemQty, addItem, removeItem, decreaseItem,cartItems,cartQty }}
+      value={{
+        getItemQty,
+        addItem,
+        removeItem,
+        decreaseItem,
+        cartItems,
+        cartQty,
+        closeCart,
+        openCart,
+      }}
     >
       {children}
     </CartContext.Provider>

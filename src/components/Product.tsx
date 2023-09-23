@@ -1,4 +1,4 @@
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 
 type ProductProps = {
   id: number;
@@ -8,8 +8,9 @@ type ProductProps = {
 };
 
 function Product({ id, title, price, imageUrl }: ProductProps) {
+  const qty = 0;
   return (
-    <Card>
+    <Card className="h-100">
       <Card.Img
         variant="top"
         src={imageUrl}
@@ -21,6 +22,11 @@ function Product({ id, title, price, imageUrl }: ProductProps) {
           <span className="fs-2 text-light">{title}</span>
           <span className="fs-2 text-light">{price}</span>
         </Card.Title>
+        <div className="mt-auto">
+          {qty === 0 ? (
+            <Button className="w-100 btn-secondary">Add to cart</Button>
+          ) : null}
+        </div>
       </Card.Body>
     </Card>
   );

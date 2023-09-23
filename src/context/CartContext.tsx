@@ -31,40 +31,40 @@ export function CartProvider({ children }: CartProviderProps) {
 
   function addItem(id: number) {
     setCartItems((currentItems) => {
-      if (currentItems.find((item) => item.id === id) === null) {
-        return [...currentItems, { id, qty: 1 }];
+      if (currentItems.find((item) => item.id === id) == null) {
+        return [...currentItems, { id, qty: 1 }]
       } else {
         return currentItems.map((item) => {
           if (item.id === id) {
-            return { ...item, qty: item.qty + 1 };
+            return { ...item, qty: item.qty + 1 }
           } else {
-            return item;
+            return item
           }
-        });
+        })
       }
-    });
+    })
   }
 
   function decreaseItem(id: number) {
     setCartItems((currentItems) => {
       if (currentItems.find((item) => item.id === id)?.qty == 1) {
-        return currentItems.filter((item) => item.id !== id);
+        return currentItems.filter((item) => item.id !== id)
       } else {
         return currentItems.map((item) => {
           if (item.id === id) {
-            return { ...item, qty: item.qty - 1 };
+            return { ...item, qty: item.qty - 1 }
           } else {
-            return item;
+            return item
           }
-        });
+        })
       }
-    });
+    })
   }
 
   function removeItem(id: number) {
     setCartItems((currentItems) => {
-      return currentItems.filter((item) => item.id !== id);
-    });
+      return currentItems.filter((item) => item.id !== id)
+    })
   }
 
   return (

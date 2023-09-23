@@ -60,6 +60,13 @@ export function CartProvider({ children }: CartProviderProps) {
       }
     });
   }
+
+  function removeItem(id: number) {
+    setCartItems((currentItems) => {
+      return currentItems.filter((item) => item.id !== id);
+    });
+  }
+
   return (
     <CartContext.Provider value={CartContext}>{children}</CartContext.Provider>
   );

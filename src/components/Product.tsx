@@ -11,6 +11,8 @@ type ProductProps = {
 function Product({ id, title, price, imageUrl }: ProductProps) {
   const { getItemQty, addItem, decreaseItem, removeItem } = useCartContext();
   const qty = getItemQty(id);
+  console.log(qty);
+  
   return (
     <Card className="h-100">
       <Card.Img
@@ -26,18 +28,45 @@ function Product({ id, title, price, imageUrl }: ProductProps) {
         </Card.Title>
         <div className="mt-auto">
           {qty === 0 ? (
-            <Button className="w-100 btn-secondary">Add to cart</Button>
+            <Button
+              className="w-100 btn-secondary"
+              onClick={() => {
+                addItem(id);
+              }}
+            >
+              Add to cart
+            </Button>
           ) : (
             <div
               className="d-flex align-items-center flex-column"
               style={{ gap: "0.5rem" }}
             >
               <div className="d-flex align-items-center justify-content-center">
-                <Button className="btn-secondary">+</Button>
+                <Button
+                  className="btn-secondary"
+                  onClick={() => {
+                    addItem(id);
+                  }}
+                >
+                  +
+                </Button>
                 <span>{qty}</span>
-                <Button className="btn-secondary">-</Button>
+                <Button
+                  className="btn-secondary"
+                  onClick={() => {
+                    decreaseItem(id);
+                  }}
+                >
+                  -
+                </Button>
               </div>
-              <Button className="btn-dark" size="sm">
+              <Button
+                className="btn-dark"
+                size="sm"
+                onClick={() => {
+                  removeItem(id);
+                }}
+              >
                 Remove
               </Button>
             </div>

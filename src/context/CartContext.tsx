@@ -4,3 +4,5 @@ type CartProviderProps = {
   children: ReactNode;
 };
 
+const CartContext = createContext({});
+

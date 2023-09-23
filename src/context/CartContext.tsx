@@ -38,7 +38,7 @@ export function CartProvider({ children }: CartProviderProps) {
           if (item.id === id) {
             return { ...item, qty: item.qty + 1 };
           } else {
-            return item
+            return item;
           }
         });
       }

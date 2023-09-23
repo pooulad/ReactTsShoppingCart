@@ -9,8 +9,8 @@ type ProductProps = {
 };
 
 function Product({ id, title, price, imageUrl }: ProductProps) {
-  const qty = 0;
   const { getItemQty, addItem, decreaseItem, removeItem } = useCartContext();
+  const qty = getItemQty(id);
   return (
     <Card className="h-100">
       <Card.Img

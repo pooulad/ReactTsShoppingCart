@@ -29,6 +29,22 @@ export function CartProvider({ children }: CartProviderProps) {
     return cartItems.find((item) => item.id === id)?.id || 0;
   }
 
+  function addItem(id: number) {
+    setCartItems((currentItems) => {
+      if (currentItems.find((item) => item.id === id) === null) {
+        return [...currentItems, { id, qty: 1 }];
+      } else {
+        return currentItems.map((item) => {
+          if (item.id === id) {
+            return { ...item, qty: item.qty + 1 };
+          } else {
+            return item
+          }
+        });
+      }
+    });
+  }
+
   return (
     <CartContext.Provider value={CartContext}>{children}</CartContext.Provider>
   );

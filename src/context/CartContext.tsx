@@ -25,6 +25,10 @@ export function useCartContext() {
 export function CartProvider({ children }: CartProviderProps) {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
+  function getItemQty(id: number) {
+    return cartItems.find((item) => item.id === id)?.id || 0;
+  }
+
   return (
     <CartContext.Provider value={CartContext}>{children}</CartContext.Provider>
   );

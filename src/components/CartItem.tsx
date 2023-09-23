@@ -1,6 +1,6 @@
 import { useCartContext } from "../context/CartContext";
 import productItems from "../data/products.json";
-import { Stack } from "react-bootstrap";
+import { Stack, Button } from "react-bootstrap";
 
 type CartItemProps = {
   id: number;
@@ -30,6 +30,9 @@ function CartItem({ id, qty }: CartItemProps) {
           )}
         </div>
         <div>{product.price * qty}</div>
+        <Button variant="outline-dark" onClick={() => removeItem(product.id)}>
+          &times;
+        </Button>
       </div>
     </Stack>
   );

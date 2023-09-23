@@ -50,7 +50,7 @@ function Product({ id, title, price, imageUrl }: ProductProps) {
                 >
                   +
                 </Button>
-                <span>{qty}</span>
+                <span className="text-light m-3">{qty}</span>
                 <Button
                   className="btn-secondary"
                   onClick={() => {

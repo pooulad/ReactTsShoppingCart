@@ -11,8 +11,6 @@ type ProductProps = {
 function Product({ id, title, price, imageUrl }: ProductProps) {
   const { getItemQty, addItem, decreaseItem, removeItem } = useCartContext();
   const qty = getItemQty(id);
-  console.log(qty);
-  
   return (
     <Card className="h-100">
       <Card.Img

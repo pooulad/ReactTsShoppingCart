@@ -4,7 +4,11 @@ type CartProviderProps = {
   children: ReactNode;
 };
 
-const CartContext = createContext({});
+type CartItem = {
+  id: number;
+  qty: number;
+};
+
 
 export function useCartContext() {
   return useContext(CartContext);

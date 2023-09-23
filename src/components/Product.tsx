@@ -34,6 +34,7 @@ function Product({ id, title, price, imageUrl }: ProductProps) {
                 <Button className="btn-secondary">+</Button>
                 <span>{qty}</span>
                 <Button className="btn-secondary">-</Button>
+              </div>
               <Button className="btn-light" size="sm">
                 Remove
               </Button>

@@ -14,7 +14,7 @@ function CartItem({ id, qty }: CartItemProps) {
     return null;
   }
   return (
-    <Stack direction="horizontal" gap={2}>
+    <Stack direction="horizontal" gap={2} className="d-flex align-items-center">
       <img
         style={{ width: "125px", height: "75px", objectFit: "cover" }}
         src={product.imageUrl}
